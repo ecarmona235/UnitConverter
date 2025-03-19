@@ -1,6 +1,7 @@
 package com.CurrencyConverter.WorldCurrencyConverter;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +9,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class WorldCurrencyConverterApplication {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ParseException {
 		SpringApplication.run(WorldCurrencyConverterApplication.class, args);
-		// GetRates.getAllRates();  // make this into conditional which will only run if its been a month since last update
-		// set this to only call the above function if current JSON is outdated 
+		if (RatesRetrieval.daysSinceLastUpdate() > 30) {
+			GetRates.getAllRates();
+			// will only run if its been a month since last update
+			// would be changed based on which subscription you have on https://fcsapi.com/
+			// can be less if you have more credits
+		}
 	}
 
 }
