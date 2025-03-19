@@ -45,7 +45,5 @@ public class GetRates {
                 System.err.println("Error saving JSON response to file: " + e.getMessage());
             }
         }
-
-        // figure out how to traverse through it and find the proper ids
     }
 }
