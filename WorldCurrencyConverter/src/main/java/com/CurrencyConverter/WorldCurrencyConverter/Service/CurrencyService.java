@@ -19,7 +19,7 @@ public class CurrencyService {
             GetRates.getAllRates();
             // will only run if its been a month since last update
             // would be changed based on which subscription you have on https://fcsapi.com/
-            // can be less if you have more credits
+            // can be less if you have more credits and want it more frequently updated
             }
             ratesMap = RatesJsonTraversal.fillRatesHash(ratesMap);
             

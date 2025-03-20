@@ -17,7 +17,7 @@ public class GetRates {
     public static void getAllRates() throws IOException {
         // gets all rates and saves them to rates.json
         OkHttpClient client = new OkHttpClient();
-        String key = "3R85oBjr9DBgeXauVYH8E7";
+        String key = "YOUR-API-KEY";
 
         // Create form data with parameters
         RequestBody requestBody = new FormBody.Builder()
